@@ -4,6 +4,8 @@
 
 int listener()
 {
+    //Why the hell am I using an int to store a char...
+    //Im so stupid...
     int c;
 
     c = getchar();
