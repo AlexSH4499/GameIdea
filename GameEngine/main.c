@@ -5,11 +5,19 @@
 
 #include "main.h"
 #include "map.h"
+#include "controls.h"
+#include "camera.h"
 
 void Initialize();
 void render();
 void update();
 void cleanUp();
+
+/*----Global Vars-----*/
+cam_strct cam  = NULL;
+char_strct character = NULL;
+/*--------------------*/
+
 
 void loadImage(SDL_Surface* surf, char* file)
 {
@@ -23,8 +31,9 @@ void Initialize()
 
         initAAR();
         iniMapGrid();
-        initPlayer();
-        cameraInit();
+        initPlayer(character);
+        cameraInit(cam);
+        keyListener();
 
 }
 
@@ -34,7 +43,7 @@ void cleanUp()
     SDL_FreeSurface(surf);
     SDL_Quit();
     freeGrid();
-    exitPlayer();
+    exitPlayer(character);
 
 }
 
@@ -46,6 +55,10 @@ void update(SDL_Surface* surf, SDL_Surface* dest,int x, int y)
 
     updateAAR();
     SDL_BlitSurface(surf,NULL,dest,&destR);
+
+    //we need to add the cam struct
+    moveCamera(cam,keyListener());
+    movePlayer(keyListener());
 }
 
 void render()
@@ -55,6 +68,7 @@ void render()
 
 int main()
 {
-
+    Initialize();
+    return 0;
 }
 

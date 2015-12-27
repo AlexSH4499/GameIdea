@@ -1,5 +1,5 @@
 #include "bounds.h"
-
+/*
 void createBounds(mvector* u, mvector* v,float radius)
 {
     u = scaleVector(u, radius);//Up vector
@@ -8,3 +8,4 @@ void createBounds(mvector* u, mvector* v,float radius)
     //set coordinates on plane
     //vertex add(u,v)
 }
+*/

@@ -1,7 +1,8 @@
 #ifndef CONTROLS_H_INCLUDED
 #define CONTROLS_H_INCLUDED
 
-float interpreterForListener(int listener);
+
+mvector keyListener();
 int listener();
 
 #endif // CONTROLS_H_INCLUDED
