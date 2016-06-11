@@ -106,6 +106,11 @@ public class MapGenerator:MonoBehaviour
     
   }//end of SmoothMap method
 
+  //Method that determines the number of nearby walls
+  /*
+    We could  modify this to work with a look-up table
+    to improve our performance 
+  */
   int GetSurroundingWallCount(int X, int Y)
   {
       int wallCount = 0;
